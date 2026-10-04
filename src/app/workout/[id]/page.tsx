@@ -101,12 +101,12 @@ export default function WorkoutDetailPage({
   };
 
   return (
-    <div className="w-full py-10 md:py-16 bg-[#0f1115]">
+    <div className="w-full py-8 sm:py-10 md:py-16 bg-[#0f1115]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs sm:text-sm text-gray-400 hover:text-[#ccff00] transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-xs sm:text-sm text-gray-400 hover:text-[#ccff00] transition-colors mb-6 sm:mb-8"
         >
           <svg
             className="w-4 h-4"
@@ -125,10 +125,10 @@ export default function WorkoutDetailPage({
         </Link>
 
         {/* Two-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           {/* Left Column: Visual/Media */}
-          <div className="lg:col-span-5 w-full sticky top-28">
-            <div className="relative w-full h-95 sm:h-115 lg:h-130 rounded-2xl overflow-hidden border border-[#262b36] bg-[#161920]">
+          <div className="lg:col-span-5 w-full lg:sticky lg:top-28">
+            <div className="relative w-full aspect-4/3 sm:aspect-video lg:aspect-9/10 rounded-2xl overflow-hidden border border-[#262b36] bg-[#161920]">
               <Image
                 src={workout.image}
                 alt={workout.name}
@@ -141,7 +141,7 @@ export default function WorkoutDetailPage({
           </div>
 
           {/* Right Column: Info & Action Sections */}
-          <div className="lg:col-span-7 flex flex-col justify-start">
+          <div className="lg:col-span-7 min-w-0 flex flex-col justify-start">
             {/* Category / MuscleGroups Tags */}
             <div className="flex flex-wrap gap-2 mb-3">
               {workout.muscleGroups?.map((group, idx) => (
@@ -155,7 +155,7 @@ export default function WorkoutDetailPage({
             </div>
 
             {/* Workout Title */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white font-(family-name:--font-oswald)">
+            <h1 className="wrap-break-words text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase tracking-tight text-white font-(family-name:--font-oswald)">
               {workout.name}
             </h1>
 
